@@ -1,7 +1,7 @@
 
 const AuthorModel = require("../models/authorsModel")
 const jwt = require('jsonwebtoken')
-const commonMw=require("../middleware/commonmiddleware")
+
 
 //Q1
 const createAuthor = async function (req, res) {
@@ -37,19 +37,11 @@ const login= async function (req, res) {
         res.send({status:true,msg:"user logged in successfully"})
          
     }else{
-        res.send({
-            status:false,
-            msg:"invalid Credentials"
+       res.status(500).send({ status: false, msg: err.message })
         })
     }
         
 }
-
-
-
-
-
-
 
 
 
