@@ -36,13 +36,11 @@ const login= async function (req, res) {
         res.setHeader("x-api-key",token) 
         res.send({status:true,msg:"user logged in successfully"})
          
+      
     }else{
        res.status(500).send({ status: false, msg: err.message })
-        })
+        }
     }
-        
-}
-
 
 
 module.exports.createAuthor = createAuthor
